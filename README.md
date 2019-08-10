@@ -11,3 +11,9 @@ http://localhost:5000/1397
 
 ##### Caso ocorra algum erro ou o campo fique vazio o campo de erro será preenchido o extenso tera seu valor anulado
 {"extenso":null, "erro":"é necessário informar um número entre -99999 e 99999"}
+
+
+## Doxygen
+
+Para gerar a documentção a partir do código eu costumo utilizar o doxygen
+http://www.doxygen.nl/
