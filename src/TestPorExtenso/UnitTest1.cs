@@ -67,9 +67,9 @@ namespace Tests
         public void B_ValidaCardinalMilhar()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
-            suporte.GetDI().numero = 1991;
+            suporte.GetDI().numero = 1996;
             string ret = suporte.GetCardinal(suporte.GetDI().numero);
-            string expected = "Mil e Novecentos e Noventa e Um";
+            string expected = "Mil e Novecentos e Noventa e Seis";
             Assert.AreEqual(expected, ret);
         }
 
