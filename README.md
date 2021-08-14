@@ -1,3 +1,7 @@
+# Status
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=laikha_PorExtenso&metric=alert_status)](https://sonarcloud.io/dashboard?id=laikha_PorExtenso)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=laikha_PorExtenso&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=laikha_PorExtenso) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=laikha_PorExtenso&metric=bugs)](https://sonarcloud.io/dashboard?id=laikha_PorExtenso) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=laikha_PorExtenso&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=laikha_PorExtenso) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=laikha_PorExtenso&metric=ncloc)](https://sonarcloud.io/dashboard?id=laikha_PorExtenso) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=laikha_PorExtenso&metric=code_smells)](https://sonarcloud.io/dashboard?id=laikha_PorExtenso)
 <h1>PorExtenso</h1>
 Código para retornar o extenso de um número inteiro informado
 
