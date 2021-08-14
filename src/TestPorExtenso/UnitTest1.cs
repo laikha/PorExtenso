@@ -69,7 +69,7 @@ namespace Tests
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 1996;
             string ret = suporte.GetCardinal(suporte.GetDI().numero);
-            string expected = "Mil e Novecentos e Noventa e Seis";
+            string expected = "Mil Novecentos e Noventa e Seis";
             Assert.AreEqual(expected, ret);
         }
 
@@ -80,6 +80,26 @@ namespace Tests
             suporte.GetDI().numero = 126;
             string ret = suporte.GetCardinal(suporte.GetDI().numero);
             string expected = "Cento e Vinte e Seis";
+            Assert.AreEqual(expected, ret);
+        }
+
+        [Test]
+        public void B_ValidaCardinalMilhar2()
+        {
+            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            suporte.GetDI().numero = 2996;
+            string ret = suporte.GetCardinal(suporte.GetDI().numero);
+            string expected = "Dois Mil Novecentos e Noventa e Seis";
+            Assert.AreEqual(expected, ret);
+        }
+
+        [Test]
+        public void B_ValidaCardinalMilhar3()
+        {
+            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            suporte.GetDI().numero = 129996;
+            string ret = suporte.GetCardinal(suporte.GetDI().numero);
+            string expected = "Cento e Vinte e Nove Mil Novecentos e Noventa e Seis";
             Assert.AreEqual(expected, ret);
         }
     }

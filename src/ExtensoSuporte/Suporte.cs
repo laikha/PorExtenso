@@ -91,7 +91,7 @@ namespace ExtensoSuporte
 
                 if (quantidadeDeCaracteresDoValor > 0 && valorParaConverter !=0)
                 {
-                    ret += ((valorParaConverter%1000 !=0)?" e ":" ") + GetCardinal(valorParaConverter);
+                    ret += (quantidadeDeCaracteresDoValor>=4?" ":" e ") + GetCardinal(valorParaConverter);
                 }
                 else if(valorParaConverter != 0)
                 {
