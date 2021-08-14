@@ -12,12 +12,13 @@ namespace PorExtenso.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private const string MENSAGEM = "É necessário informar um número entre -999999 e 999999";
         // GET api/values
         [HttpGet]
         public ActionResult<String> Get()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
-            suporte.GetDI().erro = "é necessário informar um número entre -99999 e 99999";
+            suporte.GetDI().erro = MENSAGEM;
             return suporte.GetDI().ToJson();
         }
 
@@ -28,9 +29,9 @@ namespace PorExtenso.Controllers
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             try
             {
-                if (numero < -99999 || numero > 99999)
+                if (numero < -999999 || numero > 999999)
                 {
-                    throw new ArgumentOutOfRangeException("O valor informado para deve estar entre -99999 e 99999");
+                    throw new ArgumentOutOfRangeException(MENSAGEM);
                 }
                 suporte.GetDI().numero = numero;
                 suporte.GetDI().extenso = suporte.GetCardinal(suporte.GetDI().numero);

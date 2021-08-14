@@ -73,5 +73,14 @@ namespace Tests
             Assert.AreEqual(expected, ret);
         }
 
+        [Test]
+        public void C_ValidaCentenaAglutinada()
+        {
+            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            suporte.GetDI().numero = 126;
+            string ret = suporte.GetCardinal(suporte.GetDI().numero);
+            string expected = "Cento e Vinte e Seis";
+            Assert.AreEqual(expected, ret);
+        }
     }
 }

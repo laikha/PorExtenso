@@ -16,6 +16,7 @@ namespace ExtensoSuporte
         readonly List<String> Dezena = new List<String> { "Dez", "Vinte", "Trinta", "Quarenta", "Cinquenta", "Sessenta", "Setenta", "Oitenta", "Noventa" };
         readonly List<String> DezenaComplementar = new List<String> { "Onze", "Doze", "Treze", "Quatorze", "Quinze", "Dezesseis", "Dezesete", "Dezoito", "Dezenove" };
         readonly List<String> Centena = new List<String> { "Cem", "Duzentos", "Trezentos", "Quatroscentos", "Quinhentos", "Seiscentos", "Setecentos", "Oitocentos", "Novecentos" };
+        readonly List<String> CentenaAglutinada = new List<String> {"Cento"};
         readonly List<String> Milhar = new List<String> { "Mil" };
         readonly T tipo = new T();
         
@@ -63,7 +64,14 @@ namespace ExtensoSuporte
                 }
                 else if (quantidadeDeCaracteresDoValor ==3)
                 {
-                    ret = Centena[(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)) - 1];
+                    if (valorParaConverter >= 100 && valorParaConverter <= 199)
+                    {
+                        ret = CentenaAglutinada[(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)) - 1];
+                    }
+                    else
+                    {
+                        ret = Centena[(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)) - 1];
+                    }
                 }
                 else
                 {
@@ -83,7 +91,7 @@ namespace ExtensoSuporte
 
                 if (quantidadeDeCaracteresDoValor > 0 && valorParaConverter !=0)
                 {
-                    ret += " e " + GetCardinal(valorParaConverter);
+                    ret += ((valorParaConverter%1000 !=0)?" e ":" ") + GetCardinal(valorParaConverter);
                 }
                 else if(valorParaConverter != 0)
                 {
