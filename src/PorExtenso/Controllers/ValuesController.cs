@@ -15,23 +15,23 @@ namespace PorExtenso.Controllers
         private const string MENSAGEM = "É necessário informar um número entre -999999 e 999999";
         // GET api/values
         [HttpGet]
-        public ActionResult<String> Get()
+        public IActionResult Get()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().erro = MENSAGEM;
-            return suporte.GetDI().ToJson();
+            return BadRequest(suporte.GetDI().ToJson());
         }
 
         // GET api/values/5
         [HttpGet("{numero}")]
-        public ActionResult<String> Get(int numero)
+        public IActionResult Get(int numero)
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             try
             {
                 if (numero < -999999 || numero > 999999)
                 {
-                    throw new ArgumentOutOfRangeException(MENSAGEM);
+                    throw new ArgumentOutOfRangeException("numero");
                 }
                 suporte.GetDI().numero = numero;
                 suporte.GetDI().extenso = suporte.GetCardinal(suporte.GetDI().numero);
@@ -40,8 +40,10 @@ namespace PorExtenso.Controllers
             {
                 suporte.GetDI().extenso = null;
                 suporte.GetDI().erro = e.Message;
+
+                return BadRequest(suporte.GetDI().ToJson());
             }
-            return suporte.GetDI().ToJson();
+            return Ok(suporte.GetDI().ToJson());
         }
 
     }
