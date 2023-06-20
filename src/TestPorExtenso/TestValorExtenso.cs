@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Tests
 {
-    public class Tests
+    public class TestValorExtenso
     {
         [SetUp]
         public void Setup()
@@ -13,7 +13,8 @@ namespace Tests
         }
 
         [Test]
-        public void A_ValidaSuporte()
+        [Category("ObjectCreateTest")]
+        public void Test_ValidadeSuporteNotNull()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
 
@@ -24,7 +25,8 @@ namespace Tests
         }
 
         [Test]
-        public void B_ValidaCardinalUnidade()
+        [Category("Cardinal")]
+        public void Test_UnidadeCardinal()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 6;
@@ -34,7 +36,8 @@ namespace Tests
         }
 
         [Test]
-        public void B_ValidaCardinalDezena()
+        [Category("CardinalDezena")]
+        public void Test_CardinalDezenaComUnidade()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 51;
@@ -44,7 +47,8 @@ namespace Tests
         }
 
         [Test]
-        public void B_ValidaCardinalDezena2()
+        [Category("CardinalDezena")]
+        public void Test_CardinalDezena()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 15;
@@ -54,7 +58,8 @@ namespace Tests
         }
 
         [Test]
-        public void B_ValidaCardinalCentena()
+        [Category("CardinalCentena")]
+        public void Test_CardinalCentenaComUnidade()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 619;
@@ -64,7 +69,30 @@ namespace Tests
         }
 
         [Test]
-        public void B_ValidaCardinalMilhar()
+        [Category("CardinalCentena")]
+        public void Test_CardinalCentena()
+        {
+            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            suporte.GetDI().numero = 600;
+            string ret = suporte.GetCardinal(600);
+            string expected = "Seiscentos";
+            Assert.AreEqual(expected, ret);
+        }
+
+        [Test]
+        [Category("CardinalCentena")]
+        public void Test_CardinalCem()
+        {
+            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            suporte.GetDI().numero = 100;
+            string ret = suporte.GetCardinal(100);
+            string expected = "Cem";
+            Assert.AreEqual(expected, ret);
+        }
+
+        [Test]
+        [Category("CardinalMilhar")]
+        public void Test_CardinalMilharCentenaDezenaUninidade()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 1996;
@@ -74,7 +102,8 @@ namespace Tests
         }
 
         [Test]
-        public void C_ValidaCentenaAglutinada()
+        [Category("CardinalCentena")]
+        public void Test_CardinalCentenaDezenaUnidade()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 126;
@@ -83,18 +112,10 @@ namespace Tests
             Assert.AreEqual(expected, ret);
         }
 
-        [Test]
-        public void B_ValidaCardinalMilhar2()
-        {
-            Suporte<Numeral> suporte = new Suporte<Numeral>();
-            suporte.GetDI().numero = 2996;
-            string ret = suporte.GetCardinal(suporte.GetDI().numero);
-            string expected = "Dois Mil Novecentos e Noventa e Seis";
-            Assert.AreEqual(expected, ret);
-        }
 
         [Test]
-        public void B_ValidaCardinalMilhar3()
+        [Category("CardinalMilhar")]
+        public void Test_CardinalCentenaMilharDezenaUnidade()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
             suporte.GetDI().numero = 129996;

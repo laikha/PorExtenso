@@ -11,7 +11,7 @@ namespace PorExtenso.Controllers.Tests
     public class ValuesControllerTests
     {
         [TestMethod()]
-        public void NaoAceitarMaiorQueLimiteDeRange()
+        public void Test_NaoAceitarMaiorQueLimiteDeRange()
         {
             PorExtenso.Controllers.ValuesController valuesController = new ValuesController();
             var ret = valuesController.Get(1000000);
