@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- develop
 
 pool:
   vmImage: 'windows-latest'
@@ -39,6 +40,9 @@ steps:
 
 - task: VSTest@2
   inputs:
+    testAssemblyVer2: |
+      '**\bin\**\*Tests.dll'
+      '**\bin\**\Test*.dll'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 

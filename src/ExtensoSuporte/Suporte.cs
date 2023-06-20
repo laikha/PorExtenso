@@ -64,7 +64,7 @@ namespace ExtensoSuporte
                 }
                 else if (quantidadeDeCaracteresDoValor ==3)
                 {
-                    if (valorParaConverter >= 100 && valorParaConverter <= 199)
+                    if (valorParaConverter > 100 && valorParaConverter <= 199)
                     {
                         ret = CentenaAglutinada[(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)) - 1];
                     }
