@@ -9,7 +9,7 @@ namespace ExtensoSuporte
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// @author laikha
-    public interface IBaseModel<T>
+    public interface IBaseModel<out T>
     {
         string ToJson();
         T FromJson(String jsonString);
