@@ -18,7 +18,7 @@ namespace PorExtenso.Controllers
         public IActionResult Get()
         {
             Suporte<Numeral> suporte = new Suporte<Numeral>();
-            suporte.GetDI().erro = MENSAGEM;
+            suporte.GetDI().Erro = MENSAGEM;
             return BadRequest(suporte.GetDI().ToJson());
         }
 
@@ -33,13 +33,13 @@ namespace PorExtenso.Controllers
                 {
                     throw new ArgumentOutOfRangeException("numero");
                 }
-                suporte.GetDI().numero = numero;
-                suporte.GetDI().extenso = suporte.GetCardinal(suporte.GetDI().numero);
+                suporte.GetDI().Numero = numero;
+                suporte.GetDI().Extenso = suporte.GetCardinal(suporte.GetDI().Numero);
             }
             catch (ArgumentOutOfRangeException e)
             {
-                suporte.GetDI().extenso = null;
-                suporte.GetDI().erro = e.Message;
+                suporte.GetDI().Extenso = null;
+                suporte.GetDI().Erro = e.Message;
 
                 return BadRequest(suporte.GetDI().ToJson());
             }

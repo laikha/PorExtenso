@@ -15,12 +15,15 @@ namespace ExtensoSuporte.Model
         /// Número a ser tranformado.  Ele não é serializado
         /// </summary>
         [NonSerialized]
-        public int numero;
+        private int numero;
 
-        public string extenso;
+        private string extenso;
 
-        public string erro;
-       
+        private string erro;
+
+        public int Numero { get => numero; set => numero = value; }
+        public string Extenso { get => extenso; set => extenso = value; }
+        public string Erro { get => erro; set => erro = value; }
     }
 
     
