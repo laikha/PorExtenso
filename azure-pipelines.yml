@@ -18,6 +18,7 @@ variables:
 steps:
 
 - task: SonarCloudPrepare@1
+  displayName: Prepare Sonar Cloud
   inputs:
     SonarCloud: 'PorExtenso_SonarCloud'
     organization: 'laikha'
@@ -28,10 +29,12 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
+  displayName: Update Nuget Packages
   inputs:
     restoreSolution: '$(solution)'
 
 - task: VSBuild@1
+  displayName: Build Code
   inputs:
     solution: '$(solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
@@ -39,16 +42,34 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: Test Fase
   inputs:
-    testAssemblyVer2: |
-      '**\bin\**\*Tests.dll'
-      '**\bin\**\Test*.dll'
+    solution: '$(solution)' 
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis by Azure'
+
+- task: reportgenerator@5
+  displayName: 'Cobertura'
+  inputs:
+    reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    targetdir: '$(Build.SourcesDirectory)\Tests\coveragereport'
+    verbosity: 'Verbose'
+    title: 'Cobertura'
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish Report'
+  inputs:
+    codeCoverageTool: 'cobertura'
+    summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    pathToSources: '$(Build.SourcesDirectory)'
+    reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    title: 'Covegare Report'
+
+
+- task: SonarCloudPublish@1
+  displayName: Publish Sonar
+  inputs:
+    pollingTimeoutSec: '300'
