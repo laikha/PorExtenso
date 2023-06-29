@@ -68,7 +68,6 @@ steps:
     reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     title: 'Covegare Report'
 
-
 - task: SonarCloudPublish@1
   displayName: Publish Sonar
   inputs:
