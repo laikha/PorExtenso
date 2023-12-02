@@ -12,6 +12,7 @@ namespace ExtensoSuporte
     public class Suporte<T> where T : new()
     {
         public bool TemNegativo;
+        readonly int Zero = 0;
         readonly List<String> Unidade = new List<String> { "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove" };
         readonly List<String> Dezena = new List<String> { "Dez", "Vinte", "Trinta", "Quarenta", "Cinquenta", "Sessenta", "Setenta", "Oitenta", "Noventa" };
         readonly List<String> DezenaComplementar = new List<String> { "Onze", "Doze", "Treze", "Quatorze", "Quinze", "Dezesseis", "Dezesete", "Dezoito", "Dezenove" };
@@ -38,7 +39,11 @@ namespace ExtensoSuporte
         {
             string ret;
 
-
+            if (valorParaConverter == Zero)
+            {
+                ret = "Zero";
+                return ret;
+            }
 
             int tamanhoParaReduzirDoValor = 1;
             TemNegativo = valorParaConverter < 0;
