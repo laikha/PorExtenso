@@ -36,7 +36,9 @@ namespace ExtensoSuporte
         /// <returns>Valor por extenso</returns>
         public string GetCardinal(int valorParaConverter)
         {
-            string ret = string.Empty;
+            string ret;
+
+
 
             int tamanhoParaReduzirDoValor = 1;
             TemNegativo = valorParaConverter < 0;
@@ -111,7 +113,7 @@ namespace ExtensoSuporte
         /// </summary>
         /// <param name="valor">valor a ser verificado</param>
         /// <returns>Se estiver entre 10 e 20 retorna verdadeiro</returns>
-        private bool VerificaDecimalComplamentar(int valor)
+        private static bool VerificaDecimalComplamentar(int valor)
         {
             return (valor > 10 && valor < 20);
         }
@@ -125,7 +127,7 @@ namespace ExtensoSuporte
         /// </example>
         /// <param name="tamanhoDivisor">Cardinalidade que deverá ter o divisor</param>
         /// <returns>retorna o divisor gerado</returns>
-        private int ConstroiDivisor(int tamanhoDivisor)
+        private static int ConstroiDivisor(int tamanhoDivisor)
         {
             tamanhoDivisor = (tamanhoDivisor > 4 ? 4 : tamanhoDivisor);
             return int.Parse($"1{new String('0',tamanhoDivisor-1)}");
