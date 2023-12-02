@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PorExtenso.Controllers
 {
-    [Route("")]
+    [Route("api/values")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -17,7 +17,7 @@ namespace PorExtenso.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            Suporte<Numeral> suporte = new();
             suporte.GetDI().Erro = MENSAGEM;
             return BadRequest(suporte.GetDI().ToJson());
         }
@@ -26,12 +26,12 @@ namespace PorExtenso.Controllers
         [HttpGet("{numero}")]
         public IActionResult Get(int numero)
         {
-            Suporte<Numeral> suporte = new Suporte<Numeral>();
+            Suporte<Numeral> suporte = new();
             try
             {
                 if (numero < -999999 || numero > 999999)
                 {
-                    throw new ArgumentOutOfRangeException("numero");
+                    throw new ArgumentOutOfRangeException(nameof(numero));
                 }
                 suporte.GetDI().Numero = numero;
                 suporte.GetDI().Extenso = suporte.GetCardinal(suporte.GetDI().Numero);
@@ -39,11 +39,16 @@ namespace PorExtenso.Controllers
             catch (ArgumentOutOfRangeException e)
             {
                 suporte.GetDI().Extenso = null;
-                suporte.GetDI().Erro = e.Message;
+                suporte.GetDI().Erro = e.Message + MENSAGEM;
 
                 return BadRequest(suporte.GetDI().ToJson());
             }
             return Ok(suporte.GetDI().ToJson());
+        }
+
+        public static T FromJson<T>(string json)
+        {
+            return (new BaseModel<T>()).FromJson(json);
         }
 
     }
