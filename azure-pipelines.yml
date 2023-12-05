@@ -51,21 +51,22 @@ steps:
   displayName: 'Run Code Analysis by Azure'
 
 - task: reportgenerator@5
-  displayName: 'Cobertura'
+  displayName: 'OpenCover'
   inputs:
+    codeCoverageTool: 'OpenCover'
     reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
-    targetdir: '$(Build.SourcesDirectory)\Tests\coveragereport'
+    targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'Cobertura'
+    title: 'OpenCover'
 
 - task: PublishCodeCoverageResults@1
-  displayName: 'Publish Report'
+  displayName: 'Cobertura Report'
   inputs:
-    codeCoverageTool: 'cobertura'
+    codeCoverageTool: Cobertura
     summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
     pathToSources: '$(Build.SourcesDirectory)'
     reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
-    title: 'Publish Report'
+    title: 'Cobertura Report'
 
 - task: SonarCloudPublish@1
   displayName: Publish Sonar
