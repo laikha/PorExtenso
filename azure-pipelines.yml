@@ -54,8 +54,8 @@ steps:
   displayName: 'Jacoco'
   inputs:
     codeCoverageTool: JaCoCo
-    reports: '**\$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
-    targetdir: '**\$(Build.SourcesDirectory)\Tests\CoverageReport'
+    reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     verbosity: 'Verbose'
     title: 'Jacoco'
 
@@ -63,9 +63,9 @@ steps:
   displayName: 'Cobertura Report'
   inputs:
     codeCoverageTool: JaCoCo
-    summaryFileLocation: '**\$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
-    pathToSources: '**\$(Build.SourcesDirectory)'
-    reportDirectory: '**\$(Build.SourcesDirectory)\Tests\CoverageReport'
+    summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    pathToSources: '$(Build.SourcesDirectory)'
+    reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     title: 'JaCoCo Report'
 
 - task: SonarCloudPublish@1
