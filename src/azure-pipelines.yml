@@ -48,25 +48,26 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis by Azure'
+  displayName: 'Run Code Analysis'
 
 - task: reportgenerator@5
-  displayName: 'Jacoco'
+  displayName: 'OpenCover'
   inputs:
-    codeCoverageTool: JaCoCo
+    codeCoverageTool: 'OpenCover'
     reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
     targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'Jacoco'
+    title: 'OpenCover'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
   inputs:
-    codeCoverageTool: JaCoCo
+    codeCoverageTool: Cobertura
     summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
     pathToSources: '$(Build.SourcesDirectory)'
     reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
-    title: 'JaCoCo Report'
+    title: 'Cobertura Report'
+
 
 - task: SonarCloudPublish@1
   displayName: Publish Sonar
