@@ -54,8 +54,8 @@ steps:
   displayName: 'OpenCover'
   inputs:
     codeCoverageTool: 'OpenCover'
-    reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
-    targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    reports: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
+    targetdir: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     verbosity: 'Verbose'
     title: 'OpenCover'
 
@@ -63,9 +63,9 @@ steps:
   displayName: 'Cobertura Report'
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    summaryFileLocation: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
     pathToSources: '$(Build.SourcesDirectory)'
-    reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    reportDirectory: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     title: 'Cobertura Report'
 
 
