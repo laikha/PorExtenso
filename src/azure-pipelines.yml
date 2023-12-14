@@ -62,7 +62,7 @@ steps:
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
   inputs:
-    codeCoverageTool: Cobertura
+    codeCoverageTool: OpenCover
     summaryFileLocation: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
     pathToSources: '$(Build.SourcesDirectory)'
     reportDirectory: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
