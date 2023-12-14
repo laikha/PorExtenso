@@ -47,9 +47,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
-
 - task: reportgenerator@5
   displayName: 'OpenCover'
   inputs:
@@ -68,6 +65,8 @@ steps:
     reportDirectory: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     title: 'Cobertura Report'
 
+- task: SonarCloudAnalyze@1
+  displayName: 'Run Code Analysis'
 
 - task: SonarCloudPublish@1
   displayName: Publish Sonar
