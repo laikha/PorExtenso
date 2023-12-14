@@ -48,13 +48,13 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: reportgenerator@5
-  displayName: 'OpenCover'
+  displayName: 'Cobertura'
   inputs:
-    codeCoverageTool: 'OpenCover'
+    codeCoverageTool: 'Cobertura'
     reports: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
     targetdir: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'OpenCover'
+    title: 'Cobertura'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
