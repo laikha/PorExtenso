@@ -15,14 +15,27 @@ namespace Tests
         [Test]
         [Category("ObjectCreateTest")]
         [Description("Teste de cardinal para tratar milhar")]
-        public void Test_ValidadeSuporte_NotNull_Sucesso()
+        public void Test_ValidadeSuporteToJson_NotNull_Sucesso()
         {
             Suporte<Numeral> suporte = new();
 
             suporte.GetDI().Numero = 1000;
             string ret = suporte.GetDI().ToJson();
-            Assert.IsNotEmpty(ret);
+            Assert.That(ret, Is.Not.Empty);
 
+        }
+
+        [Test]
+        [Category("ObjectCreateTest")]
+        [Description("Teste de cardinal para tratar milhar")]
+        public void Test_ValidadeSuporteFromJson_NotNull_Sucesso()
+        {
+            string snd = "{\"Numero\":1000,\"Extenso\":null,\"Erro\":null}";
+            Suporte<Numeral> suporte = new();
+
+            Numeral numeral = suporte.GetDI().FromJson(snd);
+            
+            Assert.That(numeral, Is.Not.Null);  
         }
 
         [Test]
@@ -34,7 +47,7 @@ namespace Tests
             suporte.GetDI().Numero = 6;
             var ret = suporte.GetCardinal(suporte.GetDI().Numero);
             string expected = "Seis";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -46,7 +59,7 @@ namespace Tests
             suporte.GetDI().Numero = 51;
             string ret = suporte.GetCardinal(suporte.GetDI().Numero);
             string expected = "Cinquenta e Um";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -58,7 +71,7 @@ namespace Tests
             suporte.GetDI().Numero = 15;
             string ret = suporte.GetCardinal(15);
             string expected = "Quinze";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -70,7 +83,7 @@ namespace Tests
             suporte.GetDI().Numero = 619;
             string ret = suporte.GetCardinal(619);
             string expected = "Seiscentos e Dezenove";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -82,7 +95,7 @@ namespace Tests
             suporte.GetDI().Numero = 600;
             string ret = suporte.GetCardinal(600);
             string expected = "Seiscentos";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -94,7 +107,7 @@ namespace Tests
             suporte.GetDI().Numero = 100;
             string ret = suporte.GetCardinal(100);
             string expected = "Cem";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -106,7 +119,7 @@ namespace Tests
             suporte.GetDI().Numero = 1996;
             string ret = suporte.GetCardinal(suporte.GetDI().Numero);
             string expected = "Mil Novecentos e Noventa e Seis";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
         [Test]
@@ -118,7 +131,7 @@ namespace Tests
             suporte.GetDI().Numero = 126;
             string ret = suporte.GetCardinal(suporte.GetDI().Numero);
             string expected = "Cento e Vinte e Seis";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
 
@@ -131,7 +144,7 @@ namespace Tests
             suporte.GetDI().Numero = 129996;
             string ret = suporte.GetCardinal(suporte.GetDI().Numero);
             string expected = "Cento e Vinte e Nove Mil Novecentos e Noventa e Seis";
-            Assert.AreEqual(expected, ret);
+            Assert.That(ret, Is.EqualTo(expected));
         }
 
     }
