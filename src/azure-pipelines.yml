@@ -65,6 +65,12 @@ steps:
     reportDirectory: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     title: 'Cobertura Report'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'tests/**/*.csproj'
+    arguments: '--collect "Code Coverage"'
+
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
 
