@@ -5,6 +5,8 @@
 
 trigger:
 - master
+- develop
+- branch
 
 pool:
   vmImage: 'windows-latest'
