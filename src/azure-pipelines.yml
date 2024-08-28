@@ -52,13 +52,13 @@ steps:
   displayName: 'Run Code Analysis'
 
 - task: reportgenerator@5
-  displayName: 'OpenCover'
+  displayName: 'JaCoCo'
   inputs:
-    codeCoverageTool: 'OpenCover'
+    codeCoverageTool: 'JaCoCo'
     reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
     targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'OpenCover'
+    title: 'JaCoCo'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
