@@ -14,17 +14,10 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  mySonarCloudOrganization: 'laikha'
+  projectSonarKey: 'laikha_PorExtenso'
 
 steps:
-
-- task: SonarCloudPrepare@1
-  displayName: Prepare Sonar Cloud
-  inputs:
-    SonarCloud: 'SonarCloud'
-    organization: 'laikha'
-    scannerMode: 'MSBuild'
-    projectKey: 'laikha_PorExtenso'
-    projectName: 'PorExtenso'
 
 - task: NuGetToolInstaller@1
 
@@ -48,17 +41,25 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: SonarCloudPrepare@1
+   inputs:
+     SonarCloud: 'SonarCloud'
+     organization: '$(mySonarCloudOrganization)'
+     scannerMode: 'MSBuild'
+     projectKey: '$(projectSonarKey)'
+     projectName: 'PorExtenso'
+
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
-
+  
 - task: reportgenerator@5
-  displayName: 'JaCoCo'
+  displayName: 'OpenCover'
   inputs:
-    codeCoverageTool: 'JaCoCo'
+    codeCoverageTool: 'OpenCover'
     reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
     targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'JaCoCo'
+    title: 'OpenCover'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
