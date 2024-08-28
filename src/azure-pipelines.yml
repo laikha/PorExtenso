@@ -20,9 +20,9 @@ variables:
 steps:
 
  - task: NuGetCommand@2
-  displayName: Update Nuget Packages
-  inputs:
-    restoreSolution: '$(solution)'
+   displayName: Update Nuget Packages
+   inputs:
+     restoreSolution: '$(solution)'
 
 - task: VSBuild@1
   displayName: Build Code
@@ -68,7 +68,6 @@ steps:
     pathToSources: '$(Build.SourcesDirectory)'
     reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
     title: 'Cobertura Report'
-
 
 - task: SonarCloudPublish@1
   displayName: Publish Sonar
