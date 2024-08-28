@@ -19,10 +19,19 @@ variables:
 
 steps:
 
- - task: NuGetCommand@2
-   displayName: Update Nuget Packages
-   inputs:
-     restoreSolution: '$(solution)'
+- task: SonarCloudPrepare@1
+  displayName: Sonar  
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: '$(mySonarCloudOrganization)'
+    scannerMode: 'MSBuild'
+    projectKey: '$(projectSonarKey)'
+    projectName: 'PorExtenso'
+
+- task: NuGetCommand@2
+  displayName: Update Nuget Packages
+  inputs:
+    restoreSolution: '$(solution)'
 
 - task: VSBuild@1
   displayName: Build Code
@@ -38,15 +47,6 @@ steps:
     solution: '$(solution)' 
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: SonarCloudPrepare@1
-  displayName: Sonar  
-  inputs:
-    SonarCloud: 'SonarCloud'
-    organization: '$(mySonarCloudOrganization)'
-    scannerMode: 'MSBuild'
-    projectKey: '$(projectSonarKey)'
-    projectName: 'PorExtenso'
 
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
