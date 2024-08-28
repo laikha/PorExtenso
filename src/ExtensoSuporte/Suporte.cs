@@ -19,6 +19,7 @@ namespace ExtensoSuporte
         readonly List<String> Centena = new List<String> { "Cem", "Duzentos", "Trezentos", "Quatroscentos", "Quinhentos", "Seiscentos", "Setecentos", "Oitocentos", "Novecentos" };
         readonly List<String> CentenaAglutinada = new List<String> {"Cento"};
         readonly List<String> Milhar = new List<String> { "Mil" };
+        readonly List<String> Milhao = new List<String> { "Milhão","Milhões" };
         readonly T tipo = new T();
         
         /// <summary>
@@ -134,7 +135,7 @@ namespace ExtensoSuporte
         /// <returns>retorna o divisor gerado</returns>
         private static int ConstroiDivisor(int tamanhoDivisor)
         {
-            tamanhoDivisor = (tamanhoDivisor > 4 ? 4 : tamanhoDivisor);
+            //tamanhoDivisor = (tamanhoDivisor > 4 ? 4 : tamanhoDivisor);
             return int.Parse($"1{new String('0',tamanhoDivisor-1)}");
         }
     }
