@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- develop
 
 pool:
   vmImage: 'windows-latest'
@@ -24,7 +25,7 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'laikha_PorExtenso'
     projectName: 'PorExtenso'
-    
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
