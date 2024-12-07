@@ -134,5 +134,19 @@ namespace Tests
             Assert.AreEqual(expected, ret);
         }
 
+        [Test]
+        [Category("ObjectCreateTest")]
+        [Description("Teste de cardinal para tratar milhar")]
+        public void Test_ValidadeSuporte_FromJson_Sucesso()
+        {
+            Suporte<Numeral> suporte = new();
+
+
+            string json = "{\"Numero\":1000,\"Extenso\":null,\"Erro\":null}";
+            Numeral ret = suporte.GetDI().FromJson(json);
+            Assert.IsTrue(ret.Numero == 1000);
+
+        }
+
     }
 }
