@@ -27,7 +27,6 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: '$(projectSonarKey)'
     projectName: 'PorExtenso'
-    command: dotnet sonarscanner begin /k:$(projectSonarKey) /o:$(mySonarCloudOrganization /d:sonar.host.url=https://sonarcloud.io /d:sonar.login="27fd4d26bea889f82f77058673d9c960b12d7447"
 
 - task: NuGetCommand@2
   displayName: Update Nuget Packages
@@ -48,12 +47,6 @@ steps:
     solution: '$(solution)' 
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
-    inputs:
-      command: dotnet sonarscanner end /d:sonar.login="27fd4d26bea889f82f77058673d9c960b12d7447"    
-  
   
 - task: reportgenerator@5
   displayName: 'OpenCover'
