@@ -17,11 +17,6 @@ variables:
   mySonarCloudOrganization: 'laikha'
   projectSonarKey: 'laikha_PorExtenso'
 
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
 steps:
 
 - task: SonarCloudPrepare@1
