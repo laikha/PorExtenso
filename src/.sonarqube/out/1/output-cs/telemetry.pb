@@ -1,0 +1,1 @@
+[REE:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\PorExtenso.csproj¢net6.0òCSharp10

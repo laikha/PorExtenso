@@ -1,0 +1,9 @@
+﻿E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\Controllers\ValuesController.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\Program.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\Startup.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\obj\Debug\net6.0\PorExtenso.AssemblyInfo.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\appsettings.Development.json
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\appsettings.json
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\Dockerfile
+E:\Projetos\GitHub\CSharp\PorExtenso\src\PorExtenso\Properties\launchSettings.json

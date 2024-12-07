@@ -47,9 +47,6 @@ steps:
     solution: '$(solution)' 
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
   
 - task: reportgenerator@5
   displayName: 'OpenCover'

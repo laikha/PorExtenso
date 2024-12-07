@@ -1,0 +1,4 @@
+﻿E:\Projetos\GitHub\CSharp\PorExtenso\src\ExtensoSuporte\Model\BaseModel.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\ExtensoSuporte\Model\IBaseModel.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\ExtensoSuporte\Model\Numeral.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\ExtensoSuporte\Suporte.cs

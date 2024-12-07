@@ -1,0 +1,20 @@
+
+ExtensoSuporte.IBaseModel<T>‡
+!ExtensoSuporte.Model.BaseModel<T>objectExtensoSuporte.IBaseModel<T>F
+FromJson(string)2ExtensoSuporte.Model.BaseModel<T>.FromJson(string)6
+ToJson()*ExtensoSuporte.Model.BaseModel<T>.ToJson()<
+BaseModel()-ExtensoSuporte.Model.BaseModel<T>.BaseModel()Ã
+ExtensoSuporte.Suporte<T>object,
+GetDI()!ExtensoSuporte.Suporte<T>.GetDI()>
+GetCardinal(int)*ExtensoSuporte.Suporte<T>.GetCardinal(int)0
+	Suporte()#ExtensoSuporte.Suporte<T>.Suporte()Ä
+ExtensoSuporte.Model.Numeral!ExtensoSuporte.Model.BaseModel<T>object3
+	Numeral()&ExtensoSuporte.Model.Numeral.Numeral()5
+
+Numero.get'ExtensoSuporte.Model.Numeral.Numero.get5
+
+Numero.set'ExtensoSuporte.Model.Numeral.Numero.set7
+Extenso.get(ExtensoSuporte.Model.Numeral.Extenso.get7
+Extenso.set(ExtensoSuporte.Model.Numeral.Extenso.set1
+Erro.get%ExtensoSuporte.Model.Numeral.Erro.get1
+Erro.set%ExtensoSuporte.Model.Numeral.Erro.set
