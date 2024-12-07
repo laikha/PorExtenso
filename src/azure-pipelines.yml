@@ -20,13 +20,15 @@ variables:
 steps:
 
 - task: SonarCloudPrepare@1
-  displayName: Sonar  
+  displayName: Prepare Sonar Cloud
   inputs:
     SonarCloud: 'SonarCloud'
     organization: '$(mySonarCloudOrganization)'
     scannerMode: 'MSBuild'
     projectKey: '$(projectSonarKey)'
     projectName: 'PorExtenso'
+    
+- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   displayName: Update Nuget Packages
@@ -47,24 +49,33 @@ steps:
     solution: '$(solution)' 
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-  
+
 - task: reportgenerator@5
-  displayName: 'OpenCover'
+  displayName: 'Cobertura'
   inputs:
-    codeCoverageTool: 'OpenCover'
-    reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
-    targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    codeCoverageTool: 'Cobertura'
+    reports: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
+    targetdir: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'OpenCover'
+    title: 'Cobertura'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    summaryFileLocation: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
     pathToSources: '$(Build.SourcesDirectory)'
-    reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    reportDirectory: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     title: 'Cobertura Report'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'tests/**/*.csproj'
+    arguments: '--collect "Code Coverage"'
+
+- task: SonarCloudAnalyze@1
+  displayName: 'Run Code Analysis'
 
 - task: SonarCloudPublish@1
   displayName: Publish Sonar
