@@ -5,6 +5,9 @@ on:
     branches:
       - "feature/**"
 
+env:
+  solutionname: PorExtenso.sln
+
 jobs:
   Warm-up:
     runs-on: ubuntu-latest   # ← Runner gratuito do GitHub
@@ -48,10 +51,10 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore IoC.sln
+        run: dotnet restore ${{env.solutionname}}
 
       - name: Validate tests
-        run: dotnet test PorExtenso.sln --configuration Release --verbosity normal
+        run: dotnet test ${{env.solutionname}} --configuration Release --verbosity normal
 
   Open-PR:
     needs: Tests
