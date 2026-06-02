@@ -51,7 +51,7 @@ jobs:
         run: dotnet restore IoC.sln
 
       - name: Validate tests
-        run: dotnet test IoC.sln --configuration Release --verbosity normal
+        run: dotnet test PorExtenso.sln --configuration Release --verbosity normal
 
   Open-PR:
     needs: Tests
