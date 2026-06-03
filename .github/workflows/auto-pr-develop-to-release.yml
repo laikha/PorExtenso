@@ -75,7 +75,7 @@ jobs:
       - name: Build and analyze
         shell: powershell
         run: |
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="$SECRET"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="${SECRET}"
           dotnet build
           
   Git-verify-release:
