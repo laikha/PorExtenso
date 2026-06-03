@@ -1,0 +1,6 @@
+﻿E:\Projetos\GitHub\CSharp\PorExtenso\src\TestPorExtenso\Controllers\ValuesControllerTests.cs
+E:\Projetos\GitHub\CSharp\PorExtenso\src\TestPorExtenso\SuporteTests.cs
+C:\Users\admin\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\NUnit3.TestAdapter.dll
+C:\Users\admin\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\NUnit3.TestAdapter.pdb
+C:\Users\admin\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\nunit.engine.netstandard.dll
+C:\Users\admin\.nuget\packages\nunit3testadapter\3.10.0\build\netcoreapp1.0\Mono.Cecil.dll

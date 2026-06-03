@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- develop
 
 pool:
   vmImage: 'windows-latest'
@@ -13,6 +14,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  mySonarCloudOrganization: 'laikha'
+  projectSonarKey: 'laikha_PorExtenso'
 
 steps:
 
@@ -20,9 +23,9 @@ steps:
   displayName: Prepare Sonar Cloud
   inputs:
     SonarCloud: 'SonarCloud'
-    organization: 'laikha'
+    organization: '$(mySonarCloudOrganization)'
     scannerMode: 'MSBuild'
-    projectKey: 'laikha_PorExtenso'
+    projectKey: '$(projectSonarKey)'
     projectName: 'PorExtenso'
     
 - task: NuGetToolInstaller@1
@@ -47,27 +50,32 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
-
 - task: reportgenerator@5
-  displayName: 'OpenCover'
+  displayName: 'Cobertura'
   inputs:
-    codeCoverageTool: 'OpenCover'
-    reports: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
-    targetdir: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    codeCoverageTool: 'Cobertura'
+    reports: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
+    targetdir: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     verbosity: 'Verbose'
-    title: 'OpenCover'
+    title: 'Cobertura'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Cobertura Report'
   inputs:
     codeCoverageTool: Cobertura
-    summaryFileLocation: '$(Build.SourcesDirectory)\Tests\CodeCoverage.xml'
+    summaryFileLocation: '$(Build.SourcesDirectory)\src\Tests\CodeCoverage.xml'
     pathToSources: '$(Build.SourcesDirectory)'
-    reportDirectory: '$(Build.SourcesDirectory)\Tests\CoverageReport'
+    reportDirectory: '$(Build.SourcesDirectory)\src\Tests\CoverageReport'
     title: 'Cobertura Report'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'tests/**/*.csproj'
+    arguments: '--collect "Code Coverage"'
+
+- task: SonarCloudAnalyze@1
+  displayName: 'Run Code Analysis'
 
 - task: SonarCloudPublish@1
   displayName: Publish Sonar

@@ -259,3 +259,12 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Sonar
+.sonarqube/
+.sonarqube/config/**
+.sonarqube/out/**
+.scannerwork/
+.sonar/
+.sonarlint/
+.sonarlinttmp_*/

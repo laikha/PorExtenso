@@ -1,0 +1,615 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador do Microsoft (R) Visual C#",
+        "version": "4.11.0.0",
+        "fileVersion": "4.11.0-3.24510.3 (cfe3bd0a)",
+        "semanticVersion": "4.11.0",
+        "language": "pt-BR"
+      },
+      "results": [
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 13,
+                  "endLine": 138,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 21,
+                  "endLine": 14,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private field 'Milhao'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 9,
+                  "endLine": 22,
+                  "endColumn": 80
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Model/Numeral.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 23,
+                  "endLine": 25,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Model/Numeral.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 23,
+                  "endLine": 26,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 23,
+                  "endLine": 39,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 13,
+                  "endLine": 43,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 13,
+                  "endLine": 52,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 60,
+                  "startColumn": 13,
+                  "endLine": 60,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 17,
+                  "endLine": 62,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 21,
+                  "endLine": 64,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 21,
+                  "endLine": 68,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 17,
+                  "endLine": 73,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 21,
+                  "endLine": 75,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 50,
+                  "endLine": 75,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 79,
+                  "startColumn": 21,
+                  "endLine": 79,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 17,
+                  "endLine": 84,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 21,
+                  "endLine": 86,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 21,
+                  "endLine": 91,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 86,
+                  "endLine": 98,
+                  "endColumn": 87
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 17,
+                  "endLine": 100,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 55,
+                  "endLine": 100,
+                  "endColumn": 57
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 61,
+                  "endLine": 102,
+                  "endColumn": 62
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 17,
+                  "endLine": 104,
+                  "endColumn": 21
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 110,
+                  "startColumn": 13,
+                  "endLine": 110,
+                  "endColumn": 17
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 35,
+                  "endLine": 114,
+                  "endColumn": 36
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 23,
+                  "endLine": 39,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+1",
+              "11": "+3 (incl 2 for nesting)",
+              "12": "+1",
+              "13": "+2 (incl 1 for nesting)",
+              "14": "+2 (incl 1 for nesting)",
+              "15": "+1",
+              "16": "+3 (incl 2 for nesting)",
+              "17": "+1",
+              "18": "+1",
+              "19": "+1",
+              "2": "+1",
+              "20": "+1 (recursion)",
+              "3": "+2 (incl 1 for nesting)",
+              "4": "+3 (incl 2 for nesting)",
+              "5": "+1",
+              "6": "+1",
+              "7": "+3 (incl 2 for nesting)",
+              "8": "+1",
+              "9": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "S2589",
+          "level": "warning",
+          "message": "Change this condition so that it does not always evaluate to 'True'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 21,
+                  "endLine": 100,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2583",
+          "level": "warning",
+          "message": "Change this condition so that it does not always evaluate to 'False'. Some code paths are unreachable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 25,
+                  "endLine": 104,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 106,
+                  "startColumn": 21,
+                  "endLine": 106,
+                  "endColumn": 59
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": null
+            }
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'posicaoNalista'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///E:/Projetos/GitHub/CSharp/PorExtenso/src/ExtensoSuporte/Suporte.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 17,
+                  "endLine": 58,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S1104": {
+          "id": "S1104",
+          "shortDescription": "Fields should not have public accessibility",
+          "fullDescription": "Public fields in public classes do not respect the encapsulation principle and have three main disadvantages:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1104",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "This rule raises an issue when a private/internal type or member is never referenced in the code.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Commented-out code distracts the focus from the actual executed code. It creates a noise that increases maintenance code. And because it is never executed, it quickly becomes out of date and invalid.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "An unused local variable is a variable that has been declared but is not used anywhere in the block of code where it is defined. It is dead code, contributing to unnecessary complexity and leading to confusion when reading the code. Therefore, it should be removed from your code to maintain clarity and efficiency.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2292": {
+          "id": "S2292",
+          "shortDescription": "Trivial properties should be auto-implemented",
+          "fullDescription": "Trivial properties, which include no logic but setting and getting a backing field should be converted to auto-implemented properties, yielding cleaner and more readable code.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2292",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2583": {
+          "id": "S2583",
+          "shortDescription": "Conditionally executed code should be reachable",
+          "fullDescription": "Conditional expressions which are always true or false can lead to unreachable code.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2583",
+          "properties": {
+            "category": "Major Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2589": {
+          "id": "S2589",
+          "shortDescription": "Boolean expressions should not be gratuitous",
+          "fullDescription": "Gratuitous boolean expressions are conditions that do not change the evaluation of a program. This issue can indicate logical errors and affect the correctness of an application, as well as its maintainability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2589",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S3776": {
+          "id": "S3776",
+          "shortDescription": "Cognitive Complexity of methods should not be too high",
+          "fullDescription": "This rule raises an issue when the code cognitive complexity of a function is above a certain threshold.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

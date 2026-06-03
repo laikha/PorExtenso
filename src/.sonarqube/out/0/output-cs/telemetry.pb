@@ -1,0 +1,1 @@
+cRME:\Projetos\GitHub\CSharp\PorExtenso\src\ExtensoSuporte\ExtensoSuporte.csproj¢net6.0òCSharp10

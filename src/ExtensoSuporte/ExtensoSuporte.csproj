@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="..\.sonarlint\laikha_porextenso\CSharp\SonarLint.xml" Link="SonarLint.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 

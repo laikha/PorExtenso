@@ -1,0 +1,13 @@
+G
+PorExtenso.Programobject)
+	Program()PorExtenso.Program.Program()Ë
+PorExtenso.Startupobject‹
+:Startup(Microsoft.Extensions.Configuration.IConfiguration)MPorExtenso.Startup.Startup(Microsoft.Extensions.Configuration.IConfiguration)³
+NConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)aPorExtenso.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)ò
+mConfigure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IWebHostEnvironment)€PorExtenso.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Hosting.IWebHostEnvironment)9
+Configuration.get$PorExtenso.Startup.Configuration.get9
+Configuration.set$PorExtenso.Startup.Configuration.set¢
+'PorExtenso.Controllers.ValuesController'Microsoft.AspNetCore.Mvc.ControllerBaseobject6
+Get()-PorExtenso.Controllers.ValuesController.Get()<
+Get(int)0PorExtenso.Controllers.ValuesController.Get(int)P
+ValuesController():PorExtenso.Controllers.ValuesController.ValuesController()
