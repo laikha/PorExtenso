@@ -5,6 +5,9 @@ on:
     types: [closed]
     branches: [develop]
 
+env:
+  SECRET: ${{ secrets.SONAR_TOKEN_PE }}
+
 jobs:
   Warm-up-release:
     if: ${{ github.event.pull_request.merged == true }}
@@ -60,10 +63,10 @@ jobs:
           dotnet tool update dotnet-sonarscanner --tool-path ${{ runner.temp }}\scanner
       - name: Build and analyze
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_PE }}
+          SONAR_TOKEN: $SECRET
         shell: powershell
         run: |
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="${{ secrets.SONAR_TOKEN_PE }}"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="$SECRET"
           dotnet build
           
   Git-verify-release:
