@@ -28,24 +28,9 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore $solutionname
-          
-  Git-verify-release:
-    needs: Sonar
-    runs-on: ubuntu-latest   # ← Runner gratuito do GitHub
-    permissions:
-      contents: read
-
-    steps:
-      - name: Ensure GitHub CLI (gh)
-        run: |
-          if ! command -v gh >/dev/null 2>&1; then
-            echo "gh não encontrado no runner. Instale GitHub CLI no self-hosted runner."
-            exit 1
-          fi
-          gh --version
 
   Open-PR:
-    needs: Git-verify-release
+    needs: Warm-up-release
     runs-on: ubuntu-latest   # ← Runner gratuito do GitHub
     permissions:
       contents: read
