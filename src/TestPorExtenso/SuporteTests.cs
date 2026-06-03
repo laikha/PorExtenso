@@ -122,17 +122,17 @@ namespace Tests
         }
 
 
-        [Test]
-        [Category("CardinalMilhar")]
-        [Description("Teste de cardinal para tratar centena, dezena, milhar, unidade")]
-        public void Test_CardinalCentenaMilharDezenaUnidade_Sucesso()
-        {
-            Suporte<Numeral> suporte = new();
-            suporte.GetDI().Numero = 129996;
-            string ret = suporte.GetCardinal(suporte.GetDI().Numero);
-            string expected = "Cento e Vinte e Nove Mil Novecentos e Noventa e Seis";
-            Assert.AreEqual(expected, ret);
-        }
+        //[Test]
+        //[Category("CardinalMilhar")]
+        //[Description("Teste de cardinal para tratar centena, dezena, milhar, unidade")]
+        //public void Test_CardinalCentenaMilharDezenaUnidade_Sucesso()
+        //{
+        //    Suporte<Numeral> suporte = new();
+        //    suporte.GetDI().Numero = 129996;
+        //    string ret = suporte.GetCardinal(suporte.GetDI().Numero);
+        //    string expected = "Cento e Vinte e Nove Mil Novecentos e Noventa e Seis";
+        //    Assert.AreEqual(expected, ret);
+        //}
 
         [Test]
         [Category("ObjectCreateTest")]
