@@ -6,7 +6,7 @@ on:
       - "feature/**"
 
 env:
-  solutionname: .\src\PorExtenso.sln
+  solutionname: ./src/PorExtenso.sln
 
 jobs:
   Warm-up:
