@@ -63,7 +63,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_PE }}
         shell: powershell
         run: |
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_IoCnew" /o:"laikha" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="${{ secrets.SONAR_TOKEN_PE }}"
           dotnet build
           
   Git-verify-release:
