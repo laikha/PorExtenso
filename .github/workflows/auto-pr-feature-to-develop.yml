@@ -103,7 +103,7 @@ jobs:
       - name: Build and analyze
         shell: powershell
         run: |
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="${{env..secret}}"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"laikha_PorExtenso" /o:"laikha" /d:sonar.token="${{env.secret}}"
           dotnet build
 
   Open-PR:
