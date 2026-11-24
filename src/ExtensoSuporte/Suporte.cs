@@ -38,24 +38,41 @@ namespace ExtensoSuporte
         /// <returns>Valor por extenso</returns>
         public string GetCardinal(int valorParaConverter)
         {
-            string ret;
+            bool negativo = valorParaConverter < 0;
+            TemNegativo = negativo;
 
-            if (valorParaConverter == Zero)
-            {
-                ret = "Zero";
-                return ret;
-            }
-
-            int tamanhoParaReduzirDoValor = 1;
-            TemNegativo = valorParaConverter < 0;
-
-            if (TemNegativo)
+            if (negativo)
             {
                 valorParaConverter *= -1;
             }
 
+            return $"{(negativo ? "Menos " : "")}{GetCardinalPositivo(valorParaConverter)}";
+        }
+
+        private string GetCardinalPositivo(int valorParaConverter)
+        {
+            if (valorParaConverter == Zero)
+            {
+                return "Zero";
+            }
+
+            if (valorParaConverter >= 1000)
+            {
+                int milhares = valorParaConverter / 1000;
+                int resto = valorParaConverter % 1000;
+                string extenso = milhares == 1 ? Milhar[0] : $"{GetCardinalPositivo(milhares)} {Milhar[0]}";
+
+                if (resto != Zero)
+                {
+                    string separador = resto < 100 || resto % 100 == 0 ? " e " : " ";
+                    extenso += separador + GetCardinalPositivo(resto);
+                }
+
+                return extenso;
+            }
+
+            string ret;
             int quantidadeDeCaracteresDoValor = valorParaConverter.ToString().Length;
-            int posicaoNalista = quantidadeDeCaracteresDoValor;
 
             if (quantidadeDeCaracteresDoValor > 1)
             {
@@ -70,7 +87,7 @@ namespace ExtensoSuporte
                         ret = Dezena[(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)) - 1];
                     }
                 }
-                else if (quantidadeDeCaracteresDoValor ==3)
+                else
                 {
                     if (valorParaConverter > 100 && valorParaConverter <= 199)
                     {
@@ -81,29 +98,12 @@ namespace ExtensoSuporte
                         ret = Centena[(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)) - 1];
                     }
                 }
-                else
-                {
-                    if (valorParaConverter >= 2000)
-                    {
-                        tamanhoParaReduzirDoValor = (valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor)).ToString().Length;
-                        ret = $"{GetCardinal(valorParaConverter / ConstroiDivisor(quantidadeDeCaracteresDoValor))} {Milhar[0]}";
-                    }
-                    else
-                    {
-                        ret = Milhar[0];
-                    }
 
-                }
-
-                valorParaConverter = (VerificaDecimalComplamentar(valorParaConverter)?0:int.Parse(valorParaConverter.ToString().Remove(0, tamanhoParaReduzirDoValor)));
+                valorParaConverter = (VerificaDecimalComplamentar(valorParaConverter)?0:int.Parse(valorParaConverter.ToString().Remove(0, 1)));
 
                 if (quantidadeDeCaracteresDoValor > 0 && valorParaConverter !=0)
                 {
-                    ret += (quantidadeDeCaracteresDoValor>=4?" ":" e ") + GetCardinal(valorParaConverter);
-                }
-                else if(valorParaConverter != 0)
-                {
-                    ret = GetCardinal(valorParaConverter);
+                    ret += " e " + GetCardinalPositivo(valorParaConverter);
                 }
 
             }
@@ -111,7 +111,7 @@ namespace ExtensoSuporte
             {
                 ret = Unidade[valorParaConverter - 1];
             }
-            return $"{(TemNegativo?"Menos " : "")}{ret}";
+            return ret;
         }
         
         /// <summary>

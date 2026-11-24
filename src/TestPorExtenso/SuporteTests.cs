@@ -37,6 +37,58 @@ namespace Tests
             Assert.AreEqual(expected, ret);
         }
 
+        [TestCase(0, "Zero")]
+        [TestCase(-1, "Menos Um")]
+        [TestCase(-11, "Menos Onze")]
+        [TestCase(-21, "Menos Vinte e Um")]
+        [TestCase(-100, "Menos Cem")]
+        [TestCase(-101, "Menos Cento e Um")]
+        [TestCase(-2000, "Menos Dois Mil")]
+        [Category("Cardinal")]
+        public void Test_CardinalZeroENegativos(int numero, string expected)
+        {
+            Suporte<Numeral> suporte = new();
+
+            string ret = suporte.GetCardinal(numero);
+
+            Assert.AreEqual(expected, ret);
+        }
+
+        [TestCase(1000, "Mil")]
+        [TestCase(1001, "Mil e Um")]
+        [TestCase(1100, "Mil e Cem")]
+        [TestCase(1101, "Mil Cento e Um")]
+        [TestCase(2000, "Dois Mil")]
+        [TestCase(10000, "Dez Mil")]
+        [TestCase(20000, "Vinte Mil")]
+        [TestCase(100000, "Cem Mil")]
+        [TestCase(101000, "Cento e Um Mil")]
+        [TestCase(129996, "Cento e Vinte e Nove Mil Novecentos e Noventa e Seis")]
+        [TestCase(999999, "Novecentos e Noventa e Nove Mil Novecentos e Noventa e Nove")]
+        [TestCase(-999999, "Menos Novecentos e Noventa e Nove Mil Novecentos e Noventa e Nove")]
+        [Category("CardinalMilhar")]
+        public void Test_CardinalMilhares(int numero, string expected)
+        {
+            Suporte<Numeral> suporte = new();
+
+            string ret = suporte.GetCardinal(numero);
+
+            Assert.AreEqual(expected, ret);
+        }
+
+        [Test]
+        public void Test_CardinalAtualizaSinalEntreChamadas()
+        {
+            Suporte<Numeral> suporte = new();
+
+            Assert.AreEqual("Menos Vinte e Um", suporte.GetCardinal(-21));
+            Assert.IsTrue(suporte.TemNegativo);
+            Assert.AreEqual("Zero", suporte.GetCardinal(0));
+            Assert.IsFalse(suporte.TemNegativo);
+            Assert.AreEqual("Vinte e Um", suporte.GetCardinal(21));
+            Assert.IsFalse(suporte.TemNegativo);
+        }
+
         [Test]
         [Category("CardinalDezena")]
         [Description("Teste de cardinal para tratar dezena")]
